@@ -4,9 +4,9 @@ Trang quản trị local cho luồng **nhập nguồn → kiểm sơ bộ → ng
 
 ## Clone, cài và chạy trên máy của bạn
 
-Ứng dụng có repo riêng: https://github.com/SIReal3103/crawl-rag-pipeline. Không cần clone repo tài liệu `ai-project-starter` để chạy ứng dụng.
+Ứng dụng có repo riêng: https://github.com/SIReal3103/crawl-rag-pipeline. Không cần clone repo tài liệu `ai-project-starter` để chạy ứng dụng. Xem [hướng dẫn từng bước](huong-dan-crawl-rag-pipeline.md#0-clone-cài-đặt-và-mở-ứng-dụng) nếu bắt đầu từ máy chưa có project.
 
-**Chuẩn bị:** Git, Python **3.12** có `venv`/`pip`, Bash và kết nối mạng lúc cài lần đầu. macOS/Linux dùng Terminal; Windows dùng terminal **WSL Ubuntu**, chạy toàn bộ các lệnh trong WSL. Các script Bash này không chạy trực tiếp trong PowerShell. Chưa có kiểm chứng cài đặt Windows native.
+**Chuẩn bị:** Git, Python **3.12** có `venv`/`pip`, Bash và kết nối mạng lúc cài lần đầu. macOS/Linux dùng Terminal; Windows dùng terminal **WSL Ubuntu**, chạy toàn bộ các lệnh trong WSL. Các script Bash này không chạy trực tiếp trong PowerShell. Quy trình đã được thử trên macOS; WSL và Windows native chưa được nghiệm thu trực tiếp.
 
 Kiểm công cụ trong terminal:
 
@@ -33,10 +33,13 @@ Giữ terminal chạy server, mở trình duyệt **trên cùng máy** tại **h
 Dừng server bằng **Ctrl+C** trong terminal. Lần sau mở terminal trong project và chỉ chạy `bash run.sh`. Khi muốn cập nhật, dừng server rồi chạy:
 
 ```bash
+git remote get-url origin
 git pull --ff-only
 bash setup.sh
 bash run.sh
 ```
+
+Trước khi pull, `origin` phải là `SIReal3103/crawl-rag-pipeline`. Nếu Git báo thay đổi local hoặc xung đột, giữ các thay đổi để xử lý, không reset/xóa thư mục. Khi giữ nguyên đường dẫn project và cấu hình dữ liệu, cập nhật mã không đổi kho đang dùng.
 
 Nếu cổng đang bận:
 
